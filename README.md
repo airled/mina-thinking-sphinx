@@ -8,7 +8,7 @@ bundle install
 
 Add the gem to application's Gemfile:
 ```ruby
-gem 'mina-thinking-sphinx'
+gem 'mina-thinking-sphinx', require: false
 ```
 
 Add line to `deploy.rb`
