@@ -2,13 +2,14 @@
 
 ## Install
 
-```sh
-bundle install
-```
-
 Add the gem to application's Gemfile:
 ```ruby
 gem 'mina-thinking-sphinx', require: false
+```
+
+Run
+```sh
+bundle install
 ```
 
 Add line to `deploy.rb`
@@ -36,5 +37,7 @@ ts:start
 ts:stop
 ts:restart
 ts:rebuild
+ts:index
 ts:rt:rebuild
+ts:rt:index
 ```

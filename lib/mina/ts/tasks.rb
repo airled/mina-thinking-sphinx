@@ -31,12 +31,28 @@ namespace :ts do
     end
   end
 
+  desc 'Generate the Sphinx configuration file and process all indices'
+  task index: :remote_environment do
+    comment "Processing indices"
+    in_path fetch(:current_path) do
+      command "RACK_ENV=#{fetch(:rails_env)} #{fetch(:bundle_bin)} exec rake ts:index"
+    end
+  end
+
   namespace :rt do
     desc 'Delete and regenerate real-time Sphinx files, restart the daemon'
     task rebuild: :remote_environment do
       comment "Rebuilding real-time indices"
       in_path fetch(:current_path) do
         command "RACK_ENV=#{fetch(:rails_env)} #{fetch(:bundle_bin)} exec rake ts:rt:rebuild"
+      end
+    end
+
+    desc 'Generate fresh index files for real-time indices'
+    task index: :remote_environment do
+      comment "Processing real-time indices"
+      in_path fetch(:current_path) do
+        command "RACK_ENV=#{fetch(:rails_env)} #{fetch(:bundle_bin)} exec rake ts:rt:index"
       end
     end
   end
