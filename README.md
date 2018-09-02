@@ -41,3 +41,4 @@ ts:index
 ts:rt:rebuild
 ts:rt:index
 ```
+See [Thinking Sphinx Tasks documentation](https://freelancing-gods.com/thinking-sphinx/v4/rake_tasks.html) for details.
