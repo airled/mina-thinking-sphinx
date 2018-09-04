@@ -39,6 +39,14 @@ namespace :ts do
     end
   end
 
+  desc 'Generate the Sphinx configuration file'
+  task configure: :remote_environment do
+    comment "Generating Sphinx config"
+    in_path fetch(:current_path) do
+      command "RACK_ENV=#{fetch(:rails_env)} #{fetch(:bundle_bin)} exec rake ts:configure"
+    end
+  end
+
   namespace :rt do
     desc 'Delete and regenerate real-time Sphinx files, restart the daemon'
     task rebuild: :remote_environment do

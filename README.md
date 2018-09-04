@@ -38,6 +38,7 @@ ts:stop
 ts:restart
 ts:rebuild
 ts:index
+ts:configure
 ts:rt:rebuild
 ts:rt:index
 ```
